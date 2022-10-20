@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/search.css">
+  <title>Book</title>
+</head>
+<body>
+  <h1>Booking</h1>
+  <a href="/">Back</a><br>
+
+  <label for="source">Source:</label>
+  <select name="source" id="source">
+    <option value="Mumbai">Mumbai</option>
+    <option value="New Delhi">New Delhi</option>
+    <option value="Pune">Pune</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Goa">Goa</option>
+    <option value="Bengaluru">Bengaluru</option>
+  </select>
+
+  <label for="destination">Destination:</label>
+  <select name="destination" id="destination">
+    <option value="Mumbai">Mumbai</option>
+    <option value="New Delhi">New Delhi</option>
+    <option value="Pune">Pune</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Goa">Goa</option>
+    <option value="Bengaluru">Bengaluru</option>
+  </select>
+
+  <label for="passengers">Passengers:</label>
+  <input type="number" id="passengers" min="1" max="9" value="1">
+
+  <label for="date">Date:</label>
+  <input type="date" id="date">
+
+  <button onclick="fetchResults()">Search</button>
+
+  <div class="display">
+    <select name="sort" id="sort" onchange="fetchResults()">
+      <option value="time">time</option>
+      <option value="price">price</option>
+    </select>
+    <div id="displayResults"></div>
+  </div>
+
+  <script src="/js/utilities/generateUUID.js"></script>
+  <script src="/js/search.js"></script>
+</body>
+</html>

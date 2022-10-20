@@ -1,0 +1,102 @@
+UI: home
+  home page             7
+UI: user management
+  login /sign up        2
+    login
+      click on user icon on home page
+      takes you to sign in page
+      enter username and password
+    sign up
+      if you dont have an account there is a link below username and password input tag
+      clicking on link take you to sign up page
+      enter name
+      enter username
+      enter password
+      enter confirm password
+      validate and redirect to login page
+  user details          6
+UI: flight management
+  search / sort         1
+    display flights with source and destination based on user input
+      clicking on search option in home page takes you to search page
+      input source
+      input destination
+      input date
+    sort it based time / price
+      input sort
+  booking               4
+API
+  flight controller     3
+  user controller       5
+
+
+Sprint 1
+UI: flight management - search / sort
+  display flights with source and destination based on user input
+    clicking on search option in home page takes you to search page
+    input source
+    input destination
+    input date
+  sort it based time / price
+    input sort
+
+UI: user management - login / sign up
+  login
+    click on user icon on home page
+    takes you to sign in page
+    enter username and password
+  sign up
+    if you dont have an account there is a link below username and password input tag
+    clicking on link take you to sign up page
+    enter name
+    enter username
+    enter password
+    enter confirm password
+    validate and redirect to login page
+
+
+Sprint 2
+API - flight controller
+  re
+
+
+Schema
+
+flight
+  source
+  destination
+  start date time
+  end date time
+  start airport
+  end airport
+  seats [{seatno , status}]
+  price [b e d]
+  model
+  airlines
+
+seat 
+  flight id
+  seat no
+  status
+  booking id
+  price
+
+user
+  username
+  password
+  name
+  email
+  mob no
+  coins
+
+booking
+  booking id
+  user id
+  gender
+  passenger fname
+  passenger lname
+  price
+  seatno
+
+
+

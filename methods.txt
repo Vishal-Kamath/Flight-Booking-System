@@ -1,0 +1,14 @@
+/ => home page
+
+
+/user/login => user login 
+/user/signup => user sign up
+
+logged in 
+/home/:slug => logged in home page
+/user/:slug => user details
+/search/:slug => logged in search
+jwt
+
+/api/user
+/api/flights
