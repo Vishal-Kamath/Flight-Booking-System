@@ -25,6 +25,10 @@ const bookingSchema = new mongoose.Schema({
     startDateTime: {
       type: Date,
       required: true
+    },
+    endDateTime: {
+      type: Date,
+      required: true
     }
   },
   createdAt: {

@@ -27,8 +27,7 @@ router.get('/users', AuthorizationUser,  async (req, res) => {
   let user = req.user;
   user = await User.findOne({ username: user.username});
   if (!user) return res.sendStatus(404);
-
-  res.send(user);
+  res.json(user);
 });
 
 
@@ -130,7 +129,8 @@ router.post('/book', AuthorizationUser, async (req, res) => {
       id: req.body.groupUUID,
       source: flight.source,
       destination: flight.destination,
-      startDateTime: flight.startDateTime
+      startDateTime: flight.startDateTime,
+      endDateTime: flight.endDateTime
     },
     passengerFirstName: req.body.passengerFName,
     passengerLastName: req.body.passengerLName,
@@ -157,10 +157,8 @@ router.post('/book', AuthorizationUser, async (req, res) => {
         if(err) return console.log(err);
       }
     ).clone()
-    console.log('user coins')
 
     booking = await booking.save();
-    console.log('booking')
     let seat = await Seat.findOneAndUpdate(
       {
         flight_id: req.query.flight_id,
@@ -177,8 +175,7 @@ router.post('/book', AuthorizationUser, async (req, res) => {
           return console.log(err);
         }
       }
-    ).clone()
-    console.log('seats')
+    ).clone();
     res.sendStatus(200)
   }
   catch (err) {

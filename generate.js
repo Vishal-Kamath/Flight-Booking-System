@@ -10,7 +10,8 @@ async function createFlight() {
     startDateTime: new Date('2023-10-25T12:00:00Z'),
     endDateTime: new Date('2023-10-25T13:00:00Z'),
     sourceAirport: 'mumbai airport',
-    destinationAirport: 'pune airport'
+    destinationAirport: 'pune airport',
+    price: 100
   });
   try {
     flight = await flight.save();

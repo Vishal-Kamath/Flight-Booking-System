@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+  --nav-background-color: hsl(200, 100%, 95%);
+  --nav-height: 10rem;
+  --search-tab-background-color: ;
+  --page-background-color: hsl(200, 100%, 80%);
+  --padding: 0 calc(100vw / 25);
+  --color: black;
+  --shodow-color: hsla(0, 0%, 0%, 0.3);
+  --color-inverse: white;
+  --accent-color: 200, 100%, 50%;
+}
+
+.dark {
+  --nav-background-color: hsl(200, 100%, 20%);
+  --color: white;
+  --shodow-color: hsla(0, 0%, 100%, 0.3);
+  --color-inverse: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* NavBar */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--nav-background-color);
+
+  height: var(--nav-height);
+  width: 100%;
+  padding: var(--padding);
+
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--color);
+  text-decoration: none;
+}
+
+.userContainer {
+  font-size: 2rem;
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+.userIcon {
+  aspect-ratio: 1;
+  margin-right: 1rem;
+  width: 3rem;
+  filter: invert(58%) sepia(38%) saturate(6664%) hue-rotate(172deg) brightness(103%) contrast(104%);
+  transition: filter .2s
+}
+
+
+
+/* Buttons */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  color: hsl(var(--accent-color));
+
+  background-color: transparent; 
+
+  border: 0.2rem solid hsl(var(--accent-color));
+  border-radius: 0.5rem; 
+  transition: background-color .2s, color .2s
+}
+.btn:hover {
+  background-color: hsl(var(--accent-color));
+  color: var(--color);
+  box-shadow: 0 0 5px var(--shodow-color);
+}
+
+.dark .btn:hover > .userIcon {
+  filter: invert();
+}
+.btn:hover > .userIcon {
+  filter: none;
+}
+
+.sign {
+  border-radius: 3rem;
+  width: 10rem;
+  height: 4rem;
+}
+
+.user {
+  border-radius: 3rem;
+  padding: 1rem;
+}
+
+
+/* Sign in / Sign up */
+.signPage {
+  height: 100vh;
+  background-color: var(--nav-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.signContainer {
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+
+  padding: 2.5rem 5rem;
+  box-shadow: 0 0 5px var(--shodow-color);
+}
+
+.signForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+input, select {
+  outline: none;
+}
+
+.signForm input {
+  width: 25rem;
+  height: 3.5rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+}
+.signForm .formGroup {
+  width: 25rem;
+  height: 3.5rem;
+  position: relative;
+}
+.signForm .formInput {
+  border: 0.2rem solid hsla(0,0%,0%, 0.5);;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.signForm .formInput:hover {
+  border-color: hsl(var(--accent-color), 0.5);
+}
+.signForm .formInput:focus {
+  border-color: hsl(var(--accent-color));
+}
+
+.signForm .formLabel {
+  padding: 0.1rem;
+  position: absolute;
+  color: hsla(0,0%,0%, 0.5);
+  background-color: white;
+  font-size: 1.25rem;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: top .2s ease-in,
+              font-size .2s ease-in,
+              color .2s ease-in;
+}
+
+.signForm .formInput:focus ~ .formLabel,
+.signForm .formInput:not(:placeholder-shown).formInput:not(:focus) ~ .formLabel {
+  top: 0;
+  color: hsl(var(--accent-color));
+  font-size: 1rem;
+}
+.signForm .formInput:not(:placeholder-shown).formInput:not(:focus) ~ .formLabel {
+  color: hsla(0,0%,0%, 0.5);
+}
+
+.signForm input::-webkit-outer-spin-button,
+.signForm input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.signForm input[type=number] {
+  -moz-appearance: textfield;
+}
+.signContainer p {
+  font-size: 1.25rem;
+  text-align: center;
+  width: 25rem;
+}
+
+/* User Page */
+.notfound {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notfound h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+.notfound p {
+  font-size: 3rem;
+}
+.notfound .btn {
+  width: 10rem;
+  height: 5rem;
+  font-size: 1.5rem;
+}
+.userPageContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--page-background-color);
+  width: 100%;
+  height: 100vh;
+  padding: var(--padding);
+}
+
+.userTab {
+  margin-top: calc(var(--nav-height) + 2rem);
+  background-color: white;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 3rem;
+  display: flex;
+  gap: 3rem;
+}
+.imageContainer {
+  width: 20rem;
+  height: 20rem;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  border-radius: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.userIconBig {
+  aspect-ratio: 1;
+  width: 20rem;
+  filter: invert(58%) sepia(38%) saturate(6664%) hue-rotate(172deg) brightness(103%) contrast(104%);
+}
+.userPageDetails {
+  border-left: 0.2rem solid gray;
+  padding: 0 3rem;
+}
+.username {
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(var(--accent-color));
+}
+.detailsTable {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+.logout {
+  width: 10rem;
+  height: 3rem;
+}
+
+.booking {
+  background-color: white;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 3rem;
+  display: flex;
+}
+
+.booking .sourceToDestinationContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 3rem;
+  border-right: 0.2rem solid gray;
+  width: 90%;
+}
+
+.booking .sourceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.booking .starttime {
+  font-size: 2rem;
+}
+.booking .startdate {
+  font-size: 1.5rem;
+}
+.booking .source {
+  font-size: 1rem;
+}
+
+.to {
+  font-size: 2rem;
+}
+
+.booking .destinationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.booking .endtime {
+  font-size: 2rem;
+}
+.booking .enddate {
+  font-size: 1.5rem;
+}
+.booking .destination {
+  font-size: 1rem;
+}
+
+.booking .view {
+  width: 6rem;
+  height: 6rem;
+  margin-left: 3rem;
+}
+
+/* Search Tab */
+.searchContainer {
+  width: 35rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 0;
+  margin: 1rem;
+
+  border-radius: 3rem;
+  overflow: hidden;
+
+}
+.searchContainer select,
+.searchContainer option,
+.searchContainer input,
+.searchContainer button {
+  font-size: 2rem;
+  margin: 0;
+  width: 100%;
+  height: 7rem;
+  border: none;
+}
+
+.searchContainer select:focus-within,
+.searchContainer option:focus-visible,
+.searchContainer input:focus-visible,
+.searchContainer button:focus-within {
+  font-size: 2rem;
+  margin: 0;
+  width: 100%;
+  height: 7rem;
+  border: none;
+}

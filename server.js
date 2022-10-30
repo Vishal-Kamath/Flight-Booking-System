@@ -1,16 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const searchRouter = require('./routes/search')
 const apiRouter = require('./api/api')
 const userRouter = require('./routes/user')
 const app = express();
 
-mongoose.connect('mongodb://localhost/airline');
-
 app.set('view engine', 'ejs');
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
-app.use(express.static('public'));
 app.use(express.json());
+app.use(express.static('public'));
+
+mongoose.connect('mongodb://localhost/airline');
 
 app.get('/', (req, res) => {
   res.render('index');

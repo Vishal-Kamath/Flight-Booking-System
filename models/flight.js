@@ -34,8 +34,7 @@ const flightSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true,
-    default: 50
+    required: true
   }
 });
 
