@@ -6,7 +6,7 @@ class SearchTab extends Component {
     return (
       <React.Fragment>
         <div className="searchContainer">
-          <select name="source" id="source">
+          <select name="source" id="source" className="source">
             <option value="" selected disabled hidden>Source</option>
             <option value="Mumbai">Mumbai</option>
             <option value="New Delhi">New Delhi</option>
@@ -18,7 +18,7 @@ class SearchTab extends Component {
             <option value="Bengaluru">Bengaluru</option>
           </select>
 
-          <select name="destination" id="destination">
+          <select name="destination" id="destination" className="destination">
             <option value="" selected disabled hidden>Destination</option>
             <option value="Mumbai">Mumbai</option>
             <option value="New Delhi">New Delhi</option>
@@ -30,11 +30,11 @@ class SearchTab extends Component {
             <option value="Bengaluru">Bengaluru</option>
           </select>
 
-          <input type="number" id="passengers" min="1" max="9" placeholder='Passengers'/>
+          <input type="number" id="passengers" className="passengers" min="1" max="9" placeholder='Passengers'/>
 
-          <input type="date" id="date"/>
+          <input type="date" id="date" className="date" />
 
-          <button>Search</button>
+          <button className='btn search'>Search</button>
         </div>
 
       </React.Fragment>

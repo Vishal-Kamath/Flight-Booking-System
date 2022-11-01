@@ -78,7 +78,7 @@ html {
 
   background-color: transparent; 
 
-  border: 0.2rem solid hsl(var(--accent-color));
+  border: 0.2rem outset hsl(var(--accent-color));
   border-radius: 0.5rem; 
   transition: background-color .2s, color .2s
 }
@@ -156,7 +156,7 @@ input, select {
   position: relative;
 }
 .signForm .formInput {
-  border: 0.2rem solid hsla(0,0%,0%, 0.5);;
+  border: 0.2rem outset hsla(0,0%,0%, 0.5);;
   position: absolute;
   left: 0;
   top: 0;
@@ -343,34 +343,65 @@ input, select {
 /* Search Tab */
 .searchContainer {
   width: 35rem;
-  display: flex;
-  flex-wrap: wrap;
-
+  margin-top: 20rem;
+  display: grid;
+  grid-template-areas: 
+    "source"
+    "destination"
+    "passengers"
+    "date"
+    "search";
   padding: 0;
-  margin: 1rem;
-
+  outline: 3px outset hsl(var(--accent-color));
   border-radius: 3rem;
   overflow: hidden;
-
-}
-.searchContainer select,
-.searchContainer option,
-.searchContainer input,
-.searchContainer button {
-  font-size: 2rem;
-  margin: 0;
-  width: 100%;
-  height: 7rem;
-  border: none;
+  line-height: 0;
 }
 
-.searchContainer select:focus-within,
-.searchContainer option:focus-visible,
-.searchContainer input:focus-visible,
-.searchContainer button:focus-within {
+.searchContainer .source,
+.searchContainer .destination,
+.searchContainer .passengers,
+.searchContainer .date,
+.searchContainer .search {
+  width: auto;
   font-size: 2rem;
+  padding: 2rem 1rem;
+  border: 0;
+  outline: 0;
   margin: 0;
-  width: 100%;
-  height: 7rem;
-  border: none;
+  border-bottom: 3px dotted gray;
+}
+
+.searchContainer .source {
+  grid-area: source;
+}
+
+.searchContainer .destination {
+  grid-area: destination;
+}
+
+.searchContainer .passengers {
+  grid-area: passengers;
+}
+
+.searchContainer .date {
+  grid-area: date;
+  border: 0;
+}
+
+.searchContainer .search {
+  grid-area: search;
+  border-radius: 0;
+  border: 0;
+  border-top: 3px solid hsl(var(--accent-color));
+}
+
+@media (max-width: 55rem) and (min-width: 40rem) {
+  .searchContainer {
+    width: 100%;
+    grid-template-areas: 
+    "source destination"
+    "passengers date"
+    "search search";
+  }
 }
